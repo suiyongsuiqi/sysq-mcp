@@ -2,6 +2,8 @@
 
 Official stdio-only MCP server for SYSQ mailbox automation.
 
+`sysq-mcp` is the official MCP server for SYSQ. It currently focuses on local `stdio` usage, so MCP-compatible LLM clients such as Claude Desktop, Cursor, and Cherry Studio can directly use SYSQ mailbox capabilities. It reads SYSQ credentials from the local environment and maps LLM tool calls to `sysq-sdk` and SYSQ OpenAPI.
+
 ## Positioning
 
 This package is a local MCP bridge for LLM clients.
