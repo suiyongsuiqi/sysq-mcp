@@ -33,7 +33,10 @@ describe('SYSQ tool handlers', () => {
     const result = await handleMailboxList(sdk as never, { current: 1, size: 20 });
 
     expect(sdk.mail.fetchUserMailBoxes).toHaveBeenCalledWith({ current: 1, size: 20 });
-    expect(result.isError).toBeUndefined();
+    expect('isError' in result).toBe(false);
+    if ('isError' in result) {
+      throw new Error('Expected success result.');
+    }
     expect(result.structuredContent.records).toHaveLength(1);
     expect(result.content[0]?.text).toContain('Fetched 1 mailbox(es)');
   });
@@ -46,7 +49,7 @@ describe('SYSQ tool handlers', () => {
       fullAddress: 'demo@gmail.com',
     });
 
-    expect(result.isError).toBe(true);
+    expect('isError' in result && result.isError).toBe(true);
     expect(result.content[0]?.text).toContain('Pass only one of mailBoxId or fullAddress.');
     expect(sdk.mail.bindMailToAccount).not.toHaveBeenCalled();
   });
