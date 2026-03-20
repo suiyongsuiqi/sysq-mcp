@@ -2,10 +2,26 @@
   "name": "@suiyongsuiqi/sysq-mcp",
   "version": "0.1.0",
   "description": "Official stdio-only MCP server for SYSQ mailbox automation.",
+  "keywords": [
+    "sysq",
+    "mcp",
+    "model-context-protocol",
+    "mailbox",
+    "automation",
+    "cli"
+  ],
+  "homepage": "https://github.com/suiyongsuiqi/sysq-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/suiyongsuiqi/sysq-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suiyongsuiqi/sysq-mcp.git"
+  },
   "license": "Apache-2.0",
   "type": "module",
   "bin": {
-    "sysq-mcp": "./dist/stdio.js"
+    "sysq-mcp": "dist/stdio.js"
   },
   "files": [
     "dist"
